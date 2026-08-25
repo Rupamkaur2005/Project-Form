@@ -16,12 +16,11 @@ with st.form("personal_form"):
  if submit:
    if name and village and district and occupation and address:
     st.success("Form Submitted Sucessfully!")
-st.write("### Submitted Information")
-st.write("Name:",name)
-st.write("Age:",age)
-st.write("Village:",village)
-st.write("District:",district)
-st.write("Occupaion:",occupation)
-st.write("Address:",address)
-    
-
+    st.write("### Submitted Information")
+    st.write("Name:",name)
+    st.write("Age:",age)
+    st.write("Village:",village)
+    st.write("District:",district)
+    st.write("Occupaion:",occupation)
+    st.write("Address:",address)
+        
