@@ -23,4 +23,5 @@ with st.form("personal_form"):
     st.write("District:",district)
     st.write("Occupaion:",occupation)
     st.write("Address:",address)
-        
+   else:
+    st.error("please fill all the required fields")
