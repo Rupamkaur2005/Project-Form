@@ -1,4 +1,8 @@
 import streamlit as st
+import sqlite3
+from database import create_table, insert_data
+
+create_table()
 st.title("Personal Information Form")
 st.info("This form is created by Rupam as a fun activity and practice project as a student")
 st.write("Please fill in your information below.")
@@ -16,6 +20,7 @@ with st.form("personal_form"):
  if submit:
    if name and village and district and occupation and address:
     st.success("Form Submitted Sucessfully!")
+    insert_data(name, age, gender, village, district, occupation, address)
     st.write("### Submitted Information")
     st.write("Name:",name)
     st.write("Age:",age)
