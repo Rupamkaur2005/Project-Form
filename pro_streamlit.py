@@ -1,6 +1,7 @@
 import streamlit as st
 import sqlite3
 from database import create_table, insert_data
+import pandas as pd
 
 create_table()
 st.title("Personal Information Form")
@@ -30,3 +31,12 @@ with st.form("personal_form"):
     st.write("Address:",address)
    else:
     st.error("please fill all the required fields")
+   st.write("### All Submitted Data")
+
+conn = sqlite3.connect("personal_info.db")
+
+df = pd.read_sql_query("SELECT * FROM personal_info", conn)
+
+st.dataframe(df)
+
+conn.close() 
