@@ -4,30 +4,31 @@ def create_table():
     cursor = conn.cursor()
 
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS personal_info (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT,
-        age INTEGER,
-        gender TEXT,
-        village TEXT,
-        district TEXT,
-        occupation TEXT,
-        address TEXT
-    )
+        CREATE TABLE IF NOT EXISTS personal_info (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            age INTEGER,
+            gender TEXT,
+            color TEXT,
+            fav_food TEXT,
+            fav_subject TEXT,
+            hobby TEXT
+        )
     """)
 
     conn.commit()
     conn.close()
-create_table() 
-def insert_data(name, age, gender, village, district, occupation, address):
+
+
+def insert_data(name, age, gender, color, fav_food, fav_subject, hobby):
     conn = sqlite3.connect("personal_info.db")
     cursor = conn.cursor()
 
     cursor.execute("""
         INSERT INTO personal_info
-        (name, age, gender, village, district, occupation, address)
+        (name, age, gender, color, fav_food, fav_subject, hobby)
         VALUES (?, ?, ?, ?, ?, ?, ?)
-    """, (name, age, gender, village, district, occupation, address))
+    """, (name, age, gender, color, fav_food, fav_subject, hobby))
 
     conn.commit()
-    conn.close()   
+    conn.close()
