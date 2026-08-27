@@ -12,23 +12,23 @@ with st.form("personal_form"):
  name=st.text_input("Name")
  age=st.number_input("Age",min_value=1,max_value=100,step=1)
  gender=st.selectbox("Gender",["Select Gender","Male","Female","Other"])
- village=st.text_input("Village")
- district=st.text_input("District")
- occupation=st.text_input("Occupation")
- address=st.text_area("Address")
+ color=st.text_input("color")
+ fav_food=st.text_input("Fav_Food")
+ fav_subject=st.text_input("Fav_Subject")
+ hobby=st.text_area("Hobby")
 
  submit=st.form_submit_button("Submit Form")
  if submit:
-   if name and village and district and occupation and address:
+   if name and color and fav_food and fav_subject and hobby:
     st.success("Form Submitted Sucessfully!")
-    insert_data(name, age, gender, village, district, occupation, address)
+    insert_data(name, age, gender, color, fav_food, fav_subject, hobby)
     st.write("### Submitted Information")
     st.write("Name:",name)
     st.write("Age:",age)
-    st.write("Village:",village)
-    st.write("District:",district)
-    st.write("Occupaion:",occupation)
-    st.write("Address:",address)
+    st.write("color:",color)
+    st.write("Fav_Food:",fav_food)
+    st.write("Fav_subject:",fav_subject)
+    st.write("Hobby:",hobby)
    else:
     st.error("please fill all the required fields")
    st.write("### All Submitted Data")
